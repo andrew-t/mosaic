@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>andrewt.net / mosaic</title>
+	<link rel="stylesheet" type="text/css" href="im.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script> 
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/> 
+	<script type="text/javascript" src="http://www.shawnolson.net/scripts/public_smo_scripts.js"></script>
+	<script src="im.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=9;" />
+</head>
+<body onLoad="init();">
+	<div id="imtools" class="tools">
+		<form id="fif" action="csv.php" method="post" enctype="multipart/form-data">
+			Drop an image from your computer into the box on the right<br />
+			<span class="note">Some browsers don't let you drag files; if the border turns red when you hold a file over it, you're good to go.</span><br />
+			<strong>or,</strong>
+			<label for="fi">upload a file</label>:<br /><input type="file" id="fi" name="fi" /><br />
+			<!--strong>or,</strong>
+			<label for="url">enter a URL</label>:<br /><input type="text" id="url" /><br /-->
+			<strong>or,</strong>
+			just <a href="javascript:$('#im').attr('src', 'matt.png').show();">use the default image</a>.<br />
+			<br />
+			<strong>Or</strong>,
+			<input type="checkbox" id="xlsx" name="xlsx" value="Use XLSX" checked> Excel 2007 format
+			<input type="submit" name="submit" value="Save" /> (uploaded file only)
+
+		</form> 
+
+		<form id="dzf">
+			<div id="dropzone"><img id="im" src="matt.png" title="" /></div> <br />
+			<input type="checkbox" id="crop" value="Crop image" checked> <label for="crop">Crop image</label> to
+			<input type="text" value="50" id="w" /> &times; <input type="text" value="50" id="h" /> <br />
+			<input type="button" value="Generate table" id="go" onClick="drawtable(); return false;" />
+		</form>
+
+		<div class="t">Images larger than about 50&times;50 pixels will use a lot of memory and may run slowly in the browser (but work fine as CSV).</div>
+		<div class="t">CSV data can be copy-pasted the table into <a href="#">this Excel file</a> to see the image data as colours.</div>
+	</div>
+
+	<div id="toolbar" class="tools">
+		<a href="javascript:$('#toolbar').hide();" class="x">&times;</a>
+		<form id="dataf">
+			<div><input type="checkbox" id="shownum" value="Show numbers" checked> <label for="shownum">Show numbers</label></div>
+			<div><label for="pxsize">Pixel size</label>: <input type="text" value="10" id="pxsize" /></div>
+			<div><input type="button" value="Update" id="zoom" /></div>
+		</form>
+		<div class="t">If you copy-paste the table into <a href="#">this Excel file</a>, you can save a copy to use offline.</div>
+	</div>
+
+	<canvas id="can"></canvas>
+	<div id="dcont"><table id="data"></table></div>
+</body>
+</html>

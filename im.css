@@ -113,3 +113,6 @@ td {
 td > span {
 	margin: 0; padding: 0;
 }
+.hideNumbers td span {
+	display: none;
+}

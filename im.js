@@ -72,56 +72,9 @@ function init() {
 
 	$("#shownum").change(function() {
 		if ($("#shownum").is(':checked'))
-			//$('td>span').show();
-			changecss('td > span', 'display', 'inline-block');
+			$('#data').removeClass('hideNumbers');
 		else
-			//$('td>span').hide();
-			changecss('td > span', 'display', 'none');
-	});
-
-	pxsz=$('#pxsize').val();
-	$("#pxsize").change(function() {
-		pxsize=$('#pxsize').val();
-		if (isNaN(pxsize)) {
-			alert('Value must be a number.');
-			$('#pxsize').val(pxsz);
-			return;
-		}
-		pxsz = pxsize;
-		/*changecss('td', 'height', pxsize + 'px');
-		changecss('td', 'width', (pxsize * 3 + 2) + 'px');
-		changecss('td', 'min-width', (pxsize * 3 + 2) + 'px');
-		changecss('td', 'line-height', (pxsize - 1) + 'px');
-		changecss('td', 'font-size', (pxsize - 1) + 'px');*/
-		$('.ch').css({
-			'width' : (pxsize * 3 + 2) + 'px',
-			'min-width' : (pxsize * 3 + 2) + 'px'
-		});
-		$('.rh').css({
-			'height' : pxsize + 'px'
-		});
-		$('table').css({
-			'line-height' : (pxsize - 1) + 'px',
-			'font-size' : (pxsize - 1) + 'px'
-		});
-		/*$('td').css({
-			'height' : pxsize + 'px',
-			'width' : (pxsize * 3 + 2) + 'px',
-			'min-width' : (pxsize * 3 + 2) + 'px',
-			'line-height' : (pxsize - 1) + 'px',
-			'font-size' : (pxsize - 1) + 'px'
-		});
-		$('tr').each(function() { $(this).children().css({
-			'height' : pxsize + 'px',
-			'width' : (pxsize * 3 + 2) + 'px',
-			'min-width' : (pxsize * 3 + 2) + 'px',
-			'line-height' : (pxsize - 1) + 'px',
-			'font-size' : (pxsize - 1) + 'px'
-		})});*/
-	});
-
-	$('#zoom').change(function() {
-		$("#pxsize").change();
+			$('#data').addClass('hideNumbers');
 	});
 
 	$('.tools').draggable();

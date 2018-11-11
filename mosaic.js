@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', e => {
 
 	image.addEventListener('load', e => {
 		// copy the image to the canvas
-		const scale = 128 / Math.max(image.width, image.height);
+		const scale = document.getElementById('max-size').value
+			/ Math.max(image.width, image.height);
 		canvas.width = ~~(image.width * scale);
 		canvas.height = ~~(image.height * scale);
 		const ctx = canvas.getContext('2d');

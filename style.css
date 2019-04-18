@@ -1,0 +1,138 @@
+/*
+mustard: #ffc757; 
+teal: #119aa2;
+aubergine: #4b3f73
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@font-face {
+	font-family: 'Taste';
+	src: url("https://www.andrewt.net/fonts/Taste Book.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, section, footer { font-family: 'Lato'; }
+body, section { color: #383838; }
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+}
+
+section, h1 { padding: 0 4rem; }
+
+h1, footer {
+	position: relative;
+	background: #ffc757;
+	color: #4b3f73;
+	border: 0.5rem solid #4b3f73;
+	border-width: 0.5rem 0;
+}
+h1:before, footer:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 1rem);
+	border: 0.5rem solid #119aa2;
+	border-width: 0.5rem 0;
+	content: '';
+	pointer-events: none;
+}
+
+h1 {
+	font-family: 'Taste';
+	font-weight: normal;
+	font-size: 4rem;
+	line-height: 4rem;
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
+}
+
+strong { color: black; font-weight: 800; }
+
+.step {
+	margin-bottom: 4em;
+}
+
+button, input {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+button {
+	float: right;
+	padding: 0.5em 4em;
+	background: #119aa2;
+	border: 0.25em solid #119aa2;
+	color: white;
+}
+button:disabled {
+	opacity: 0.5;
+}
+button:not(:disabled):hover {
+	background: #ffc757;
+	border: 0.25em solid #119aa2;
+	color: black;
+	cursor: pointer;
+}
+
+.image-upload {
+	display: block;
+	height: 5em;
+	overflow: hidden;
+	position: relative;
+	border: 0.25em dashed #ffc757;
+}
+.image-upload::before {
+	content: 'Click to upload';
+	line-height: 4.5em;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	cursor: pointer;
+	color: #4b3f73;
+}
+.image-upload input {
+	opacity: 0;
+}
+.image-upload img {
+	object-fit: cover;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.image-upload img.hidden {
+	display: none;
+}
+
+label {
+	display: block;
+}
+label input {
+	float: right;
+}
+
+footer {
+	color: black;
+	clear: both;
+	padding: 1rem 4rem;
+	margin: 14rem 0 10rem;
+}
+footer a {
+	color: #4b3f73;
+	font-weight: bold;
+	text-decoration: none;
+}
+footer a:hover {
+	color: #119aa2;
+	font-weight: bold;
+	text-decoration: underline;
+}

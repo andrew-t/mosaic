@@ -10,11 +10,30 @@
 	<!--[if IE]>
 	<script type="text/javascript" src="dist/jszip-utils-ie.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<input type="file" id="upload"><br>
-	<label for="max-size">Maximum image size</label>
-	<input type="number" id="max-size" value="128"><br>
-	<button id="go">Go</button>
+	<h1>Spreadsheet Photo Converter</h1>
+	<section>
+		<div class="step">
+			<p>First, <strong>select a picture</strong> from your computer:</p>
+			<label class="image-upload">
+				<input type="file" id="upload">
+				<img id="img" class="hidden">
+			</label>
+		</div>
+		<div class="step">
+			<p>Next, <strong>choose a size</strong> — spreadsheets are much larger than images so we'll shrink your picture down so that it has this many pixels along its shortest size:</p>
+			<label>
+				Maximum image size:
+				<input type="number" id="max-size" value="128">
+			</label>
+		</div>
+		<div class="step">
+			<p>Lastly…</p>
+			<button id="go" disabled>Get your spreadsheet</button>
+		</div>
+	</section>
+	<footer>Made by <a href="https://www.andrewt.net">Andrew</a>, for <a href="http://www.standupmaths.com">Matt</a>.</footer>
 </body>
 </html>

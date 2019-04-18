@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', e => {
 	const uploader = document.getElementById('upload'),
 		canvas = document.createElement('canvas'),
 		goButton = document.getElementById('go'),
-		image = new Image();
+		image = document.getElementById('img');
 
 	// document.body.appendChild(canvas);
 
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', e => {
 		reader.addEventListener('load', e => image.src = e.target.result);
 		reader.readAsDataURL(f);
 		goButton.removeAttribute('disabled');
+		image.classList.remove('hidden');
 	}
 
 	image.addEventListener('load', e => {

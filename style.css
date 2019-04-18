@@ -43,7 +43,7 @@ h1:before, footer:before {
 }
 
 h1 {
-	font-family: 'Taste';
+	font-family: 'Taste', sans-serif;
 	font-weight: normal;
 	font-size: 4rem;
 	line-height: 4rem;

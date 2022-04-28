@@ -12,8 +12,8 @@ aubergine: #4b3f73
 	font-style: normal;
 }
 
-body, section, footer { font-family: 'Lato'; }
-body, section { color: #383838; }
+body, form, footer { font-family: 'Lato'; }
+body, form { color: #383838; }
 
 body {
 	margin: 0;
@@ -21,7 +21,7 @@ body {
 	font-size: 1.5em;
 }
 
-section, h1 { padding: 0 4rem; }
+form, h1 { padding: 0 4rem; }
 
 h1, footer {
 	position: relative;

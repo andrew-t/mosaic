@@ -14,11 +14,11 @@
 </head>
 <body>
 	<h1>Spreadsheet Photo Converter</h1>
-	<section>
+	<form id="mosaic-form">
 		<div class="step">
 			<p>First, <strong>select a picture</strong> from your computer:</p>
 			<label class="image-upload">
-				<input type="file" id="upload">
+				<input type="file" id="upload" required>
 				<img id="img" class="hidden">
 			</label>
 		</div>
@@ -26,14 +26,14 @@
 			<p>Next, <strong>choose a size</strong> — spreadsheets are much larger than images so we'll shrink your picture down so that it has this many pixels along its shortest size:</p>
 			<label>
 				Maximum image size:
-				<input type="number" id="max-size" value="128">
+				<input type="number" id="max-size" value="128" required>
 			</label>
 		</div>
 		<div class="step">
 			<p>Lastly…</p>
-			<button id="go" disabled>Get your spreadsheet</button>
+			<button>Get your spreadsheet</button>
 		</div>
-	</section>
+	</form>
 	<footer>Made by <a href="https://www.andrewt.net">Andrew</a>, for <a href="http://www.standupmaths.com">Matt</a>.</footer>
 </body>
 </html>
